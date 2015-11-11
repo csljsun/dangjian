@@ -1,0 +1,59 @@
+<br>
+<h4 style="color:#FFF">评论（共{$data.comment.count}条）</h4>
+<div class="comment-area ">
+ <hr>
+    <div class="comments">
+      <table class="table">
+        <volist name='data.comment.list' id='vo' empty="暂时没有数据">
+           <tr class="notice">
+                <th>
+                  <eq name="vo.user_info.sex" value="1">
+                    <img alt="40x40" src="__IMG__/sex_m.png" />
+                  <else />
+                    <img alt="40x40" src="__IMG__/sex_f.png" />
+                  </eq>
+                </th>
+                <td style="border-top-style:none">
+                  <div class="comment container col-md-10" id="comment{$vo.id}">
+                    <div class="container">
+                      <div class="col-md-8">
+                        <p  style="color:#FFE"> {$vo.user_info.realname}，发表于【{$vo.create_time}】</p>
+                    </div>
+                    <div class="col-md-2">
+                      <eq name="data.base_info.role" value="1">
+                        <a class="btn pull-right" onClick="delcfm('/home/comment/remove?id={$vo.id}')">删除</a>
+                        <script src="__JS__/delete.js"></script>
+                      </eq>
+                    </div>
+                  </div>
+                    <div class="comment-body">
+                      <div class="comment-content">
+                        <span  style="color:#FEE">{$vo.content}</span>
+                      </div>
+                    </div>
+                    <br/>
+                    <div class="clearfix"></div>
+                  </div>
+
+                </td>
+            </tr>
+        </volist>
+      </table>
+    </div>
+    <hr>
+    <eq name="data.comment_authority" value ="1">
+      <form class="form-horizontal comment-form" action="{:U('/home/comment/new','','')}" method="post">
+        <div class="control-group">
+            <div class="comment-postbox-wraper">
+              <textarea class="form-control comment-postbox" placeholder="请在此处写评论" style="min-height:90px;"  name="content"></textarea>
+            </div>
+        </div>
+
+        <div class="control-group">
+              <button type="submit" class="btn pull-right btn-primary J_ajax_submit_btn"><i class="fa fa-comment-o"></i> 发表评论</button>
+        </div>
+
+        <input type="hidden" name="work_id" value="{$data.data.id}"/>
+      </form>
+    </eq>
+</div>

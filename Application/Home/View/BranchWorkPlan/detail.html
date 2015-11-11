@@ -1,0 +1,94 @@
+<include file="Public:confirm" />
+<ul class="breadcrumb">
+    <li>
+    <a href="/home/index/index">党建云平台</a> <span class="divider">/</span>
+    </li>
+    <li>
+        支部工作</a> <span class="divider">/</span>
+    </li>
+    <li class="active">
+        党支部概况
+    </li>
+</ul>
+<div class="caption" align="center">
+    <eq name="data.authority" value="1">
+        <p>
+            <a class="btn btn-primary pull-left" href="/home/branch_work_plan/new">新建</a>
+        </p>
+    </eq>
+</br>
+    <h3 style="color:#FFF">  <a>{$data.data.year_plan.year}</a>年度工作计划 </h3>
+<!--     <input type="submit" name="edit" id="edit_year_button" value="编辑" onclick="editYearPlan()";/> -->
+</div>
+<table class="table">
+    <notempty name='data.data.year_plan'>
+        <tbody>
+            <tr class="info">
+                <td>{$data.data.year_plan.content}</td>
+
+
+            </tr>
+        </tbody>
+    <else />
+        <p style="color:#FFF">暂时没有数据 </p>
+    </notempty>
+</table>
+<div class="caption" align="center">
+    <h3 style="color:#FFF">  月度工作写实 </h3>
+</div>
+<table class="table">
+    <thead>
+        <tr class="info">
+            <th>月份</th>
+            <th>工作写实</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <volist name='data.data.month_plan' id='vo' empty="暂时没有数据">
+            <tr class="warning">
+                <td>{$vo.month}</td>
+                <td id="td_content_{$vo.month}">{$vo.content}</td>
+                <td>
+                    <a class="btn pull-right" onClick="delcfm('/home/branch_work_plan/remove?id={$vo.id}')">删除</a>
+                    <script src="__JS__/delete.js"></script>
+                    <a id = "edit_month_{$vo.month}" onClick="editMonthPlan({$vo.id},{$vo.month},'{$vo.content}')" class="btn pull-right">编辑</a>
+                </td>
+            </tr>
+        </volist>
+    </tbody>
+</table>
+<script type="text/javascript">
+function editYearPlan(){
+    //var content = "<{$data.data.year_plan.content}>";
+    document.getElementById('td_content').innerHTML="<input type='text' width=800px  value=" + "<{$data.data.year_plan.content}>" + " />";
+    document.getElementById('edit_button').value=
+    "提交";
+}
+function editMonthPlan(id, month, content){
+    var btnName = 'edit_month_'+month;
+    var btnValue = document.getElementById(btnName).innerHTML;
+    if ('提交' == btnValue) {
+        var contentId = 'td_content_'+month;
+        content = document.getElementById('inner').value;
+        $.ajax({
+            type:'post',
+            url:'/home/branch_work_plan/modify',
+            data: 'id='+id + '&content=' + content,
+            async: false,
+            success: function(data) {
+                //成功时的回调方法
+                alert('修改成功！');
+                window.location.reload();
+            },
+            error: function(){}
+        });
+    } else {
+        var contentId = 'td_content_'+month;
+        document.getElementById(contentId).innerHTML="<input id ='inner' type='text' width=800px  value='" + content + "' />";
+
+        document.getElementById(btnName).innerHTML="提交";
+    }
+
+}
+</script>

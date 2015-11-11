@@ -1,0 +1,29 @@
+<ul class="breadcrumb">
+    <li>
+        <a href="/home/index/index">党建云平台</a>
+    </li>
+    <li class="active">
+        {$data.category_name}
+    </li>
+</ul>
+
+<div class="thumbnail" style="background:#fff;">
+    <div class="control-group" >
+        <eq name="data.base_info.role" value="1">
+          <a class="btn btn-primary pull-right" onClick="upload(400, 200)">上传</a>
+          <script src="__JS__/upload.js"></script>
+        </eq>
+        <table class="table" frame=void>
+            <tbody >
+                <volist name='data.data' id='vo' empty="暂时没有数据">
+                <tr >
+                    <td>
+                        <a href ="/{$vo.path}"  target=_blank>{$vo.name}</a>
+                    </td>
+                </tr>
+                </volist>
+            </tbody>
+        </table>
+
+    </div>
+</div>

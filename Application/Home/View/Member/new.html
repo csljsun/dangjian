@@ -1,0 +1,144 @@
+<ul class="breadcrumb">
+    <li>
+        <a href="/home/index/index">党建云平台</a>
+    </li>
+    <li class="active">
+        新建成员
+    </li>
+</ul>
+
+<br/>
+<div class="container">
+  <div class="row col-md-4">
+    <div id="add">
+      <form class="form-horizontal" action="{:U('new','','')}" role="form" method="post">
+        <div class="control-group">
+             <label class="control-label" for="realname" style="color:#fff">姓名</label>
+            <div class="controls">
+                <input id="realname" name="realname" type="text" placeholder="姓名" style="width:449px" required />
+            </div>
+        </div>
+         <div class="control-group">
+             <label class="control-label" for="sex" style="color:#fff" style="color:#fff">性别</label>
+            <div class="controls">
+                <input type="radio" name="sex" value="1" checked="checked" > <font style="color:#fff">男</font> </<input>
+                <input type="radio" name="sex" value="0" style="color:#fff"> <font style="color:#fff">女</font> </<input>
+            </div>
+        </div>
+        <div class="control-group">
+             <label class="control-label" for="nation" style="color:#fff">民族</label>
+            <div class="controls">
+                <input id="nation" name="nation" type="text" placeholder="民族" style="width:449px" required />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="title" style="color:#fff">文化程度</label>
+             <div class="controls">
+                <select class="combobox" id="education" name="education">
+                    <option value="1">高中</option>
+                    <option value="2">中专中技</option>
+                    <option value="3">大专</option>
+                    <option value="4">大学及以上</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="birthday" style="color:#fff">出生日期</label>
+<!--             <div class="input-append date" id="form_birthday" data-date-format="mm-yyyy">
+                <input size="16" type="text" value="" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div> -->
+            <div class="controls">
+                <input id="nation" name="nation" type="text" placeholder="民族" style="width:449px" required />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="worktime" style="color:#fff">工作日期</label>
+<!--              <div class="input-append date" id="form_worktime" data-date-format="mm-yyyy">
+                <input size="16" type="text" value="" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div> -->
+            <div class="controls">
+                <input id="nation" name="nation" type="text" placeholder="民族" style="width:449px" required />
+            </div>
+        </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="dangtime" style="color:#fff">入党日期</label>
+<!--             <div class="input-append date" id="form_dangtime" data-date-format="mm-yyyy">
+                <input size="16" type="text" value="" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div> -->
+            <div class="controls">
+                <input id="nation" name="nation" type="text" placeholder="民族" style="width:449px" required />
+            </div>
+        </div>
+
+        <div class="control-group">
+             <label class="control-label" for="profession" style="color:#fff">职务</label>
+             <div class="controls">
+                <select class="combobox" id="profession" name="profession">
+                    <option value="1">党委书记</option>
+                    <option value="2">党委副书记</option>
+                    <option value="3">组织委员</option>
+                    <option value="4">宣传委员</option>
+                    <option value="5">纪检委员</option>
+                    <option value="6">委员</option>
+                </select>
+            </div>
+        </div>
+         <div class="control-group">
+             <label class="control-label" for="level" style="color:#fff">职称</label>
+             <div class="controls">
+                <select class="combobox" id="level" name="level">
+                    <option value="1">高级工</option>
+                    <option value="2">技师</option>
+                    <option value="3">高级技师</option>
+                    <option value="4">助理级职称</option>
+                    <option value="5">中级职称</option>
+                    <option value="6">高级职称</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+             <label class="control-label" for="address" style="color:#fff">家庭住址及联系方式</label>
+            <div class="controls">
+                <input id="address" name="address" type="text" placeholder="家庭住址及联系方式" style="width:449px" required />
+            </div>
+        </div>
+        <div class="control-group">
+             <label class="control-label" for="feebase" style="color:#fff">党费核定基数</label>
+            <div class="controls">
+                <input id="feebase" name="feebase" type="text" placeholder="党费核定基数" style="width:449px" required />
+            </div>
+        </div>
+        <div class="control-group">
+             <label class="control-label" for="feemoney" style="color:#fff">党费核定金额</label>
+            <div class="controls">
+                <input id="feemoney" name="feemoney" type="text" placeholder="党费核定金额" style="width:449px" required />
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <br/>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+// <script type="text/javascript">
+// $(function () {
+//     $(".form_worktime").datetimepicker({
+//        format: "yyyy-mm-dd",
+//         weekStart: 1,
+//         startDate: "1920-1-1",
+//         startView: "year",
+//         minView: "month",
+//         maxView: "decade",
+//         language: "zh-CN",
+//         initialDate: "1984-1-1"
+//     });
+// });
+// </script>

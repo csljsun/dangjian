@@ -1,0 +1,54 @@
+<ul class="breadcrumb">
+    <li>
+        <a href="/home/index/index">党建云平台</a>
+    </li>
+    <li class="active">
+        {$data.category_name}
+    </li>
+    <notempty name="data.type_name">
+        <li class="active">
+            {$data.type_name}
+        </li>
+    </notempty>
+</ul>
+
+<div class="thumbnail" style="background:#fff;">
+    <eq name="data.authority" value="1">
+        <p>
+            <a class="btn btn-primary pull-right" href="/home/work/new">新建</a>
+        </p>
+    </eq>
+    <div class="control-group" >
+        <table class="table" frame=void>
+            <tbody >
+                <volist name='data.data' id='vo' empty="暂时没有数据">
+                <tr >
+                    <td>
+                        <p>*
+                    </td>
+                    <td>
+                        <a href ="/home/work/detail?id={$vo.id}" >{$vo.title}</a>
+                    </td>
+                    <td>
+                        <p class="pull-right">{$vo.date}
+                    </td>
+                </tr>
+                </volist>
+            </tbody>
+        </table>
+    </div>
+    <neq name="data.pager.total_page" value="1">
+        <nav style="text-align: center">
+            <ul class="pagination" style="text-align:center">
+                <for start="1" end="$data.pager.total_page">
+                     <eq name="data.pager.curr_page" value="$i">
+                        <li><a class="active">{$i}</a></li>
+                     <else/>
+                        <li><a href="/home/work/list?category={$data.category}&page={$i}">{$i}</a></li>
+                     </eq>
+                </for>
+            </ul>
+        </nav>
+    </neq>
+
+</div>

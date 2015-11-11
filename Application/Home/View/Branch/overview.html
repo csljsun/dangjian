@@ -1,0 +1,105 @@
+<br/>
+<ul class="breadcrumb">
+    <li>
+    <a href="/home/index/index">党建云平台</a> <span class="divider">/</span>
+    </li>
+    <li>
+        支部工作</a> <span class="divider">/</span>
+    </li>
+    <li class="active">
+        党支部概况
+    </li>
+</ul>
+<div class="caption" align="center">
+    <h3 style="color:#FFF">  基本情况 </h3>
+</div>
+<table class="table">
+    <thead>
+        <tr class="warning">
+            <th>党小组数</th>
+            <th>班组数</th>
+            <th>在岗职工数</th>
+            <th>党员数</th>
+            <th>在岗党员数</th>
+            <th>离退休党员数</th>
+            <th>其他党员数</th>
+            <th>预备党员数</th>
+            <th>入党申请人数</th>
+            <th>入党积极分子数</th>
+            <th>发展对象</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="warning">
+            <td>{$data.data.count_sta.dang_group_count}</td>
+            <td>{$data.data.count_sta.class_group_count}</td>
+            <td>{$data.data.count_sta.onduty_count}</td>
+            <td>{$data.data.count_sta.dang_member_count}</td>
+            <td>{$data.data.count_sta.dang_onduty_count}</td>
+            <td>{$data.data.count_sta.dang_offduty_count}</td>
+            <td>{$data.data.count_sta.dang_other_count}</td>
+            <td>{$data.data.count_sta.dang_prepared_count}</td>
+            <td>{$data.data.count_sta.dang_apply_count}</td>
+            <td>{$data.data.count_sta.dang_activist_count}</td>
+            <td>{$data.data.count_sta.dang_develop_count}</td>
+        </tr>
+    </tbody>
+    <thead>
+        <tr class="warning">
+            <th rowspan="2">党员情况分析</th>
+            <th>大学及以上<hr />{$data.data.count_sta.edu_university_count}</th>
+            <th>大专<hr />{$data.data.count_sta.edu_college_count}</th>
+            <th>中专中技<hr />{$data.data.count_sta.edu_deploma_count}</th>
+            <th>高中<hr />{$data.data.count_sta.edu_senior_count}</th>
+            <th>高级职称<hr />{$data.data.count_sta.level_senior_profession_count}</th>
+            <th>中级职称<hr />{$data.data.count_sta.level_medium_profession_count}</th>
+            <th>助理级职称<hr />{$data.data.count_sta.level_junior_profession_count}</th>
+            <th>高级技师<hr />{$data.data.count_sta.level_senior_technician_count}</th>
+            <th>技师<hr />{$data.data.count_sta.level_technician_count}</th>
+            <th>高级工<hr />{$data.data.count_sta.level_senior_worker_count}</th>
+        </tr>
+    </thead>
+</table>
+<div class="caption" align="center">
+    <h3 style="color:#FFF">  委员名单 </h3>
+</div>
+<table class="table">
+    <thead>
+        <tr class="warning">
+            <th>支部书记<hr />支部副书记<hr />组织委员<hr />宣传委员<hr />纪检委员<hr />委员</th>
+            <th>
+                {$data.data.committee_list.secretry}<hr />
+                {$data.data.committee_list.duputy_secretry}<hr />
+                {$data.data.committee_list.organization}<hr />
+                {$data.data.committee_list.publicity}<hr />
+                {$data.data.committee_list.dicipline}<hr />
+                {$data.data.committee_list.committee}
+            </th>
+        </tr>
+    </thead>
+</table>
+<div class="caption" align="center">
+    <h3 style="color:#FFF"> 党小组设置情况 </h3>
+</div>
+<table class="table">
+    <thead>
+        <tr class="info">
+            <th>党小组</th>
+            <th>小组长</th>
+            <th>党员数</th>
+            <th>职工数</th>
+            <th>覆盖班组数</th>
+        </tr>
+    </thead>
+    <tbody>
+         <volist name='data.data.group_setting' id='vo' empty="暂时没有数据">
+            <tr class="warning">
+                <td>{$vo.name}</td>
+                <td>{$vo.leader}</td>
+                <td>{$vo.dang_count}</td>
+                <td>{$vo.staff_count}</td>
+                <td>{$vo.coverage}</td>
+            </tr>
+        </volist>
+    </tbody>
+</table>

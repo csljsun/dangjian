@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/summernote/0.5.1/summernote.css" />
+    <script src="http://cdn.bootcss.com/summernote/0.5.1/summernote.min.js">
+-->
+    <script src="__STATIC__/jquery.min.js"></script>
+    <link rel="stylesheet" href="__STATIC__/bootstrap/css/bootstrap.min.css">
+    <script src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
+<!--     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="__STATIC__/summernote.css" />
+    <script src="__STATIC__/summernote.min.js">
+    <link href="__STATIC__/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/bootstrap/js/bootstrap-paginator.min.js"></script>
+<!--    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 400px)" href="__CSS__/tinyScreen.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 400px) and (max-device-width: 600px)" href="__CSS__/smallScreen.css" />
+-->    <link rel="stylesheet" type="text/css" href="__CSS__/header.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1", minimum-scale=1.0, maximum-scale=1.0, user-scalable=no />
+</head>
+<body>
+<div id="container">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span4" style="position:relative">
+                <img style="width:100%; height:100%;" position="absolute" vertical-align="middle" src="__IMG__/top.jpg"/>
+                <div style="position:absolute;width:250px;height:350px;border:0px solid;right:-40px;bottom:-170px">
+                    <table style="border:3px grey solid;border-collapse: collapse;">
+                        <tr style="padding: 0.3em 1em;"><td style="vertical-align:middle; text-align:center;padding: 0.3em 1em;">
+                        <img style="width:60px; height:60px;" position="absolute" vertical-align="middle top:20px;left:20px" src="__IMG__/qr_code.jpg"/>
+                        </tr>
+                        <tr><td style="vertical-align:middle; text-align:center;">
+                            <script src="__JS__/datetime/datetime.js"></script>
+                            <script type="text/javascript">getYear();</script>
+                            <p style="color:grey;font-size:20px"><script type="text/javascript">getMonthDay();</script></p>
+                            <script type="text/javascript">getWeekDay();</script><br/>
+                            <script src="__JS__/datetime/getCNdate.js"></script>
+                            农历<script type="text/javascript">showCal();</script>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12" style="no-repeat 4px 5px; position:relative">
+                <img style="width:100%; height:100%;" position="absolute" vertical-align="middle" src="__IMG__/top_2.png"/>
+            </div>
+        </div>
+    </div>
+     <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12" style="no-repeat 4px 5px; position:relative">
+                <img style="width:100%; height:100%;" position="absolute" vertical-align="middle" src="__IMG__/title_bar.png"/>
+                <div style="position:absolute;width:100%;border:0px solid;bottom:15px">
+                <ul class="nav nav-tabs">
+                    <li style="color:#fff">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:rgb(216,171,107)">党委工作<strong class="caret"></strong></a>
+                         <ul class="dropdown-menu">
+                            <li>
+                                <a href="__MODULE__/work/list?category=1&type=11" >重要文件</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=1&type=12">重点工作</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=1&type=13">重要言论</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=1&type=14">重要事项</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:rgb(216,171,107)">纪委工作<strong class="caret"></strong></a>
+                         <ul class="dropdown-menu">
+                            <li>
+                                <a href="__MODULE__/work/list?category=2&type=11" >重要文件</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=2&type=12">重点工作</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=2&type=13">重要言论</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=2&type=14">重要事项</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:rgb(216,171,107)">工会工作<strong class="caret"></strong></a>
+                         <ul class="dropdown-menu">
+                            <li>
+                                <a href="__MODULE__/work/list?category=3&type=11" >重要文件</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=3&type=12">重点工作</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=3&type=13">重要言论</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=3&type=14">重要事项</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:rgb(216,171,107)">团委工作<strong class="caret"></strong></a>
+                         <ul class="dropdown-menu">
+                            <li>
+                                <a href="__MODULE__/work/list?category=4&type=11" >重要文件</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=4&type=12">重点工作</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=4&type=13">重要言论</a>
+                            </li>
+                            <li>
+                                <a href="__MODULE__/work/list?category=4&type=14">重要事项</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                         <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:rgb(216,171,107)">支部工作<strong class="caret"></strong></a>
+                         <ul class="dropdown-menu menu-top">
+                            <volist name='data.branch_info' id='vo' empty="暂时没有数据">
+                               <li class="dropdown-submenu">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:rgb(216,171,107)">{$vo.name}<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/home/branch/overview?id={$vo.id}" >党支部概况</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home/branch/roster?id={$vo.id}">党员名册</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home/branch_work_plan/detail?branch_id={$vo.id}">工作计划</a>
+                                    </li>
+                                    <li>
+                                        <a href="__MODULE__/work/list?id={$vo.id}&category=5&type=4">党内会议</a>
+                                    </li>
+                                    <li>
+                                        <a href="__MODULE__/work/list?id={$vo.id}&category=5&type=6">党课资料</a>
+                                    </li>
+                                    <li>
+                                        <a href="__MODULE__/work/list?id={$vo.id}&category=5&type=7">党内活动</a>
+                                    </li>
+                                    <li>
+                                        <a href="__MODULE__/work/list?id={$vo.id}&category=5&type=8">纪检监察</a>
+                                    </li>
+                                    <li>
+                                        <a href="__MODULE__/work/list?id={$vo.id}&category=5&type=0">其他活动</a>
+                                    </li>
+                                </ul>
+                              </li>
+                          </volist>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="__MODULE__/file/presenceList" style="color:rgb(216,171,107)">党员风采</a>
+                    </li>
+                    <li>
+                        <a href="__MODULE__/file/list" style="color:rgb(216,171,107)">资料室</a>
+                    </li>
+                    <li class="pull-right" style="right:20px;bottom:-10px;">
+                        <p style="color:rgb(216,171,107)">
+                            <empty name="data.base_info.realname">
+                             <a href ="__MODULE__/auth/login/">登陆</a>
+                             <else/>
+                             你好，{$data.base_info.realname} <a href="__MODULE__/auth/logout/">退出</a>
+                            </empty>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>

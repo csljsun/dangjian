@@ -1,0 +1,37 @@
+<ul class="breadcrumb">
+    <li>
+        <a href="/home/index/index">党建云平台</a> <span class="divider">/</span>
+    </li>
+    <li class="active">
+        党委工作
+    </li>
+</ul>
+
+<br/>
+<div class="container">
+  <div class="row col-md-6 col-sm-offset-3">
+    <div id="modify">
+      <form class="form-horizontal" action="{:U('modify','','')}" role="form" method="post">
+        <div class="control-group">
+             <label class="control-label" for="title">标题</label>
+            <div class="controls">
+                <input id="id" name="id" type="hidden" value="{$data.id}" required />
+                <input style="width:500px" id="title" name="title" type="text" placeholder="标题" value="{$data.title}" required />
+            </div>
+        </div>
+        <div class="control-group">
+             <label class="control-label" for="content">正文</label>
+            <div class="controls">
+                <input style="width:500px;height:300px" id="content" name="content" type="content" placeholder="正文" value="{$data.content}" required />
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <br/>
+                <button type="submit" class="btn">提交</button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

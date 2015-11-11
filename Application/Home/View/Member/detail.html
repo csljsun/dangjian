@@ -1,0 +1,28 @@
+<ul class="breadcrumb">
+    <li>
+        <a href="/home/index/index">党建云平台</a> <span class="divider">/</span>
+    </li>
+    <li class="active">
+        党委工作
+    </li>
+</ul>
+
+<br/>
+<ul class="thumbnails">
+    <li class="span4">
+        <div class="thumbnail">
+            <div class="caption" align="center">
+                <h3>
+                    {$data.title}
+                </h3>
+                <p>{$data.create_time}
+                <br/>
+                <notempty name="data.cover"><img align="center" alt="图片加载失败" width="300" height="200" src="__IMG__/{$data.cover}" /></notempty>
+
+            </div>
+            <p>
+                {$data.content}
+            </p>
+        </div>
+    </li>
+</ul>

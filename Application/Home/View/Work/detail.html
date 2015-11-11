@@ -1,0 +1,34 @@
+<include file="Public:confirm" />
+<ul class="breadcrumb">
+    <li>
+        <a href="/home/index/index">党建云平台</a>
+    </li>
+    <li class="active">
+        {$data.data.category_name}
+    </li>
+     <li class="active">
+        {$data.data.type_name}
+    </li>
+</ul>
+
+<br/>
+<div class="thumbnail">
+    <div class="caption" align="center">
+        <h3>
+            {$data.data.title}
+        </h3>
+        <p>{$data.data.create_time}
+        <br/>
+    </div>
+    {$data.data.content}
+</div>
+
+<eq name="data.authority" value ="1">
+    <p>
+        <a class="btn btn-primary pull-right" href="/home/work/modify?id={$data.data.id}">编辑</a>
+        <a class="btn btn-primary pull-right" onClick="delcfm('/home/work/remove?id={$data.data.id}&category={$data.data.category}')">删除</a>
+         <script src="__JS__/delete.js"></script>
+    </p>
+</eq>
+
+<include file="Public:comment" />

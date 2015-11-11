@@ -1,0 +1,74 @@
+<br/>
+<ul class="breadcrumb">
+    <li>
+    <a href="/home/index/index">党建云平台</a> <span class="divider">/</span>
+    </li>
+    <li class="active">
+        支部工作<span class="divider">/</span>
+    </li>
+    <li class="active">
+        党支部概况
+    </li>
+</ul>
+<div class="container-fluid">
+    <eq name="data.authority" value="1">
+        <p>
+            <a class="btn btn-primary pull-left" href="/home/member/new">新建</a>
+        </p>
+    </eq>
+<div container="row-fluid">
+    <div class="caption" align="center">
+        <h3 style="color:#FFF">  党员名册 </h3>
+    </div>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="info" >
+                <th>编号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>民族</th>
+                <th >文化程度</th>
+                <th>出生年月</th>
+                <th>工作时间</th>
+                <th>入党时间</th>
+                <th>职务</th>
+                <th>职称</th>
+                <th>家庭住址或联系方式</th>
+                <th>党费核定基数</th>
+                <th>党费核定金额</th>
+                <th>所在班组支部</th>
+                <th>变动情况</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name='data.data' id='vo' empty="暂时没有数据">
+            <tr class="warning">
+                <td>{$key+1}</td>
+                <td>{$vo.realname}</td>
+                <<td>
+                    <eq name="vo.sex" value="0">
+                        女
+                        <else/>
+                        男
+                    </eq>
+                </td>
+                <td>{$vo.nation}</td>
+                <td>{$vo.education}</td>
+                <td>{$vo.birthday}</td>
+                <td>{$vo.worktime}</td>
+                <td>{$vo.dangtime}</td>
+                <td>{$vo.profession}</td>
+                <td>{$vo.level}</td>
+                <td>{$vo.address}，{$vo.mobile}</td>
+                <td>{$vo.feebase}</td>
+                <td>{$vo.feemoney}</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>

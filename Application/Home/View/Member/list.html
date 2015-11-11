@@ -1,0 +1,111 @@
+<br/>
+<ul class="breadcrumb">
+    <li>
+    <a href="#">党建云平台</a> <span class="divider">/</span>
+    </li>
+     <li class="active">
+        支部工作
+    </li>
+    <li class="active">
+        支部成员
+    </li>
+</ul>
+<div class="container">
+    <eq name="data.authority" value="1">
+        <p>
+            <a class="btn btn-primary pull-left" href="/home/member/new">新建</a>
+        </p>
+    </eq>
+<table class="table">
+    <thead>
+        <tr class="info">
+            <th>
+                编号
+            </th>
+            <th>
+                姓名
+            </th>
+            <th>
+                性别
+            </th>
+            <th>
+                手机
+            </th>
+            <th>
+                电子邮箱
+            </th>
+            <th>
+                教育背景
+            </th>
+            <th>
+                职别
+            </th>
+            <th>
+                职称
+            </th>
+            <th>
+                入党状态
+            </th>
+            <th>
+                在职状态
+            </th>
+            <th>
+                民族
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <volist name='data' id='vo' empty="暂时没有数据">
+        <tr class="warning">
+            <td>
+                {$key+1}
+            </td>
+            <td>
+                {$vo.realname}
+            </td>
+            <<td>
+                <eq name="vo.sex" value="0">
+                    女
+                    <else/>
+                    男
+                </eq>
+            </td>
+            <td>
+                {$vo.mobile}
+            </td>
+            <td>
+                {$vo.email}
+            </td>
+            <td>
+                {$vo.education}
+            </td>
+            <td>
+                {$vo.profession}
+            </td>
+            <td>
+                {$vo.level}
+            </td>
+            <td>
+                <switch name="vo.dang">
+                    <case value="0">群众</case>
+                    <case value="1">积极分子</case>
+                    <case value="2">预备党员</case>
+                    <case value="3">正式党员</case>
+                    <default />群众
+                </switch>
+            </td>
+            <td>
+                <eq name="vo.status" value="0">
+                    离退休
+                    <else/>
+                    在职
+                </eq>
+            </td>
+            <td>
+                {$vo.nation}
+            </td>
+        </tr>
+        </volist>
+    </tbody>
+</table>
+</div>

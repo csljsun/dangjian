@@ -1,0 +1,45 @@
+<br/>
+<ul class="breadcrumb">
+    <li>
+    <a href="/home/index/index">党建云平台</a> <span class="divider">/</span>
+    </li>
+    <li>
+        支部工作</a> <span class="divider">/</span>
+    </li>
+    <li class="active">
+        党支部概况
+    </li>
+</ul>
+<div class="caption" align="center">
+    <h3 style="color:#FFF">  <a>{$data.data.year_plan.year}</a>年度工作计划 </h3>
+</div>
+<table class="table">
+    <notempty name='data.data.year_plan'>
+        <tbody>
+            <tr class="info">
+                <td>{$data.data.year_plan.content}</td>
+            </tr>
+        </tbody>
+    <else />
+        <p style="color:#FFF">暂时没有数据 </p>
+    </notempty>
+</table>
+<div class="caption" align="center">
+    <h3 style="color:#FFF">  月度工作写实 </h3>
+</div>
+<table class="table">
+    <thead>
+        <tr class="info">
+            <th>月份</th>
+            <th>工作写实</th>
+        </tr>
+    </thead>
+    <tbody>
+        <volist name='data.data.month_plan' id='vo' empty="暂时没有数据">
+            <tr class="warning">
+                <td>{$vo.month}</td>
+                <td>{$vo.content}</td>
+            </tr>
+        </volist>
+    </tbody>
+</table>

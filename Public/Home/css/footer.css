@@ -1,0 +1,11 @@
+body{
+    font: normal 120% Helvetica, Arial, sans-serif;
+	/*background: #560804; */
+    /*background: #4A0001;*/
+    background: #ffffff;
+}
+.footer {
+    float: middle;
+    width: 100%;
+}
+}
